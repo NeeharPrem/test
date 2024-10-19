@@ -1,6 +1,6 @@
 import React from 'react';
 import { Search } from 'lucide-react';
-import SectionOne from './sectionOne';
+import SectionOne from './Section';
 
 const HomePage = () => {
     const stats = [
