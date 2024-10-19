@@ -4,6 +4,9 @@ import SectionOne from './Section';
 import SectionMap from './SectionMap';
 import SectionProps from './SectionProps';
 import EcoFriendlyProperties from './SectionEco';
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import Slider from 'react-slick';
 
 const HomePage = () => {
     const stats = [
@@ -17,7 +20,32 @@ const HomePage = () => {
         { src: "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", alt: "Luxury villa with pool" },
         { src: "https://images.unsplash.com/photo-1716807335226-dfe1e2062db1?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", alt: "Pink mediterranean style house" }
     ];
-    const property = 'https://www.jvmlending.com/wp-content/uploads/2024/05/Too-Much-Caution-Over-Credit-Inquiries-Soft-Pulls-to-the-Rescue-ARM-Data-Too-831x467.webp';
+
+    const property = '/api/placeholder/831/467';
+
+    const sliderSettings = {
+        dots: false,
+        infinite: true,
+        speed: 500,
+        slidesToShow: 3,
+        slidesToScroll: 1,
+        autoplay: true,
+        autoplaySpeed: 3000,
+        responsive: [
+            {
+                breakpoint: 768,
+                settings: {
+                    slidesToShow: 2,
+                }
+            },
+            {
+                breakpoint: 480,
+                settings: {
+                    slidesToShow: 1,
+                }
+            }
+        ]
+    };
 
     return (
         <>
@@ -56,15 +84,18 @@ const HomePage = () => {
                                 ))}
                             </div>
                         </div>
-                        <div className="grid grid-cols-3 gap-4">
-                            {propertyImages.map((img, index) => (
-                                <img
-                                    key={index}
-                                    src={img.src}
-                                    alt={img.alt}
-                                    className="w-40 h-28 object-cover rounded-lg shadow-md"
-                                />
-                            ))}
+                        <div className="w-[500px]"> {/* Fixed width container for slider */}
+                            <Slider {...sliderSettings} className="property-slider">
+                                {propertyImages.map((img, index) => (
+                                    <div key={index} className="px-2">
+                                        <img
+                                            src={img.src}
+                                            alt={img.alt}
+                                            className="w-full h-28 object-cover rounded-lg shadow-md"
+                                        />
+                                    </div>
+                                ))}
+                            </Slider>
                         </div>
                     </div>
 
@@ -98,7 +129,7 @@ const HomePage = () => {
                 <div className='relative flex flex-col items-center w-full'>
                     <div className='flex justify-center items-center p-9'>
                         <div className='border-4 border-gray-900 p-2'>
-                            <img src={property} className='object-contain h-auto' alt="Property Image" />
+                            <img src={property} className='object-contain h-auto' alt="Property" />
                         </div>
                     </div>
                     <div className='w-full h-16 bg-gray-900'></div>
@@ -108,7 +139,7 @@ const HomePage = () => {
                     <SectionMap />
                 </div>
                 <SectionProps />
-                <EcoFriendlyProperties/>
+                <EcoFriendlyProperties />
             </div>
         </>
     );
