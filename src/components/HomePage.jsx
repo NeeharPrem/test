@@ -3,6 +3,7 @@ import { Search } from 'lucide-react';
 import SectionOne from './Section';
 import SectionMap from './SectionMap';
 import SectionProps from './SectionProps';
+import EcoFriendlyProperties from './SectionEco';
 
 const HomePage = () => {
     const stats = [
@@ -107,6 +108,7 @@ const HomePage = () => {
                     <SectionMap />
                 </div>
                 <SectionProps />
+                <EcoFriendlyProperties/>
             </div>
         </>
     );
