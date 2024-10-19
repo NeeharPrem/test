@@ -56,7 +56,50 @@ const HomePage = () => {
                             <div className="bg-amber-400 text-black w-fit px-3 py-1 text-sm font-medium rounded">
                                 THE MOST TRUSTED REAL ESTATE
                             </div>
-                            <div className='h-52 w-96 bg-gray-100'></div>
+                            <div className='h-52 w-full bg-white'>
+                                <div className="flex flex-col items-start justify-center p-8">
+                                    <h1 className="text-5xl font-bold mb-4 flex gap-2 transform transition-all duration-1000">
+                                        <span className="text-blue-600 animate-[fade-in-back_4.5s_ease-out_infinite]">
+                                            BUY,
+                                        </span>
+                                        <span className="text-red-500 animate-[fade-in-back_4.5s_ease-out_300ms_infinite]">
+                                            RENT,
+                                        </span>
+                                        <span className="text-green-400 animate-[fade-in-back_4.5s_ease-out_600ms_infinite]">
+                                            OR SELL
+                                        </span>
+                                    </h1>
+
+                                    <h1 className="text-4xl font-bold mb-4 animate-[fade-in-back_4.5s_ease-out_900ms_infinite]">
+                                        YOUR PROPERTY
+                                    </h1>
+
+                                    <h1 className="text-4xl font-bold animate-[fade-in-back_4.5s_ease-out_1200ms_infinite]">
+                                        EASILY!
+                                    </h1>
+
+                                    <style jsx>{`
+        @keyframes fade-in-back {
+          0% {
+            opacity: 0;
+            transform: translateZ(-100px);
+          }
+          30% {
+            opacity: 1;
+            transform: translateZ(0);
+          }
+          80% {
+            opacity: 1;
+            transform: translateZ(0);
+          }
+          100% {
+            opacity: 0;
+            transform: translateZ(-100px);
+          }
+        }
+      `}</style>
+                                </div>
+                            </div>
                             <p className="text-gray-600 mb-8">
                                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed aliquet porta turpis, non bibendum ex.
                                 condimentum quis. Pellentesque auctor libero ac interdum finibus.
