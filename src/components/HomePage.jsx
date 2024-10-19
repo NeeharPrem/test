@@ -1,6 +1,8 @@
 import React from 'react';
 import { Search } from 'lucide-react';
 import SectionOne from './Section';
+import SectionMap from './SectionMap';
+import SectionProps from './SectionProps';
 
 const HomePage = () => {
     const stats = [
@@ -101,6 +103,10 @@ const HomePage = () => {
                     <div className='w-full h-16 bg-gray-900'></div>
                 </div>
                 <SectionOne />
+                <div className='p-10'>
+                    <SectionMap />
+                </div>
+                <SectionProps />
             </div>
         </>
     );
